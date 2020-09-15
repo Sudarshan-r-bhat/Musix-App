@@ -9,6 +9,12 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { SongsComponent } from './songs/songs.component';
 import { UserComponent } from './user/user.component';
+import { FormsModule } from "@angular/forms";
+import { CarouselModule } from 'ngx-owl-carousel-o';  // This is for the dashboard's carousel
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { PlaybarComponent } from './playbar/playbar.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +24,17 @@ import { UserComponent } from './user/user.component';
     FooterComponent,
     SearchResultComponent,
     SongsComponent,
-    UserComponent
+    UserComponent,
+    RegisterComponent,
+    LoginComponent,
+    PlaybarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

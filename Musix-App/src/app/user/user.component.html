@@ -1,1 +1,62 @@
-<p>user works!</p>
+<div class="container-fluid mt-5">
+    <div class="row">
+      <div class="col col-lg-4 col-md-4 col-12">
+        <!--Sidebar content-->
+        <nav class="nav flex-column mt-15 pt-5">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a (click)="toggle('comments')" class="nav-link active decoration text-danger" ><h4>Comments</h4></a>
+                </li>
+                <li class="nav-item">
+                  <a (click)="toggle('favourites')"class="nav-link active decoration text-danger"><h4>Favourites</h4></a>
+                </li>
+                <li class="nav-item">
+                  <a (click)="toggle('recommendation')" class="nav-link active decoration text-danger" ><h4>Recommendation</h4></a>
+                </li>
+                <li class="nav-item">
+                  <a (click)="toggle('countrySpecial')"class="nav-link active decoration text-danger" ><h4>Country Special</h4></a>
+                </li>
+              </ul>
+            <!-- <a class="nav-link active text-danger menuLinks"><h4>Album</h4></a> -->
+          </nav>
+      </div>
+
+ 
+      <div class="col col-lg-8 col-md-8 col-12">
+        <!--Body content-->
+        <div name="artistContainer" class="jumbotron jumbotron-fluid bg-danger text-light">
+            <div class="container">
+              <h3 class="display-4">Comments</h3>
+              <p class="lead">
+                    Van Buuren has won a number of accolades. 
+                    He has been ranked the number one DJ by DJ Mag a 
+                    record of five times, four years in a row.[5] 
+                    He was ranked fourth on the DJ Mag Top 100 DJs list in 2015, 
+                    2016, and 2019,[6] and third in 2017.[7] In 2014, 
+                    he was nominated for a Grammy Award for Best Dance 
+                    Recording for his single "This Is What It Feels Like"
+                    featuring Trevor Guthrie,[8] which makes him the fourth 
+                    trance artist ever to receive a Grammy Award nomination.[9] 
+                    In the United States, he holds the record for most entries, 
+                    twenty-one, on the Billboard Dance/Electronic Albums chart.[10] 
+
+                </p>
+                <small>source: wikipedia</small>
+            </div>
+          </div>
+
+      </div>
+      <!-- end of row-fluid -->
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+

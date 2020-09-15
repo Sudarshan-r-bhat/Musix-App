@@ -1,0 +1,7 @@
+.rounded {
+    border-radius: 4em;
+}
+.menuLinks:hover,
+.menuLinks:active {
+    text-decoration: underline;
+}

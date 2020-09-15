@@ -1,0 +1,66 @@
+.bar{
+    position: fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height: 12vh;
+    background-color: rgb(250, 59, 59);
+    padding: 0px 10px;
+    
+    }
+    .details{
+        /* padding: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px; */
+        color: white;
+        height: 10vh;
+    }
+    .description{
+        float:left;
+        line-height: 40px;
+        margin-left: 20px;
+        /* max-width: full; */
+    }
+    .time,
+    .control{
+        float:right;
+        line-height: 40px;
+    }
+    
+    @media only screen and (max-width: 500px){
+        .description{
+            width: 70px;
+            overflow: hidden;
+            color: black;
+        }
+    }
+    
+    .btn-circle{
+        border-radius: 50%;
+        color: white;
+        outline: none;
+        box-shadow: none;
+        
+    }
+    .btn-circle:focus,.btn-circle:active:focus,.btn-circle.active:focus,
+    .btn-circle.focus,.btn-circle:active.focus,.btn-circle.active.focus {
+        outline: none;
+    }
+    
+    .fav:link,
+    .fav:visited,
+    input[type=submit]:hover,
+    input[type=submit]:active{
+    color: black;
+    }
+    /* .slider{
+        color: black;
+    } */
+    
+    .clear{
+        clear:both;
+    }
+    .myClass{
+        color :black;
+      }
+    
