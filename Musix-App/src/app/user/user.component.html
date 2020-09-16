@@ -1,7 +1,77 @@
+
+<!-- User profile page -->
 <div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col col-lg-4 col-md-4 col-12 text-center">
+      <!--Sidebar content-->
+      <img 
+      src="https://randomuser.me/api/portraits/women/43.jpg" 
+      alt="Artist" class="img-circle">
+      <nav class="nav flex-column mt-20 pt-4">
+          <button (click)="toggle('profile')" class="btn btn-light btn-sm mt-3 p-1"><h4>Profile</h4></button>
+          <button (click)="toggle('favourite')" class="btn btn-light btn-sm mt-3 p-1"><h4>Favourite</h4></button>
+          <button (click)="toggle('recommend')" class="btn btn-light btn-sm mt-3 p-1"><h4>Recommendation</h4></button>
+      </nav>
+    </div>
+
+
+    <div class="col col-lg-8 col-md-8 col-12 bg-light">
+      <!--Body content-->
+      <div *ngIf="tprofile" name="profileContainer" class="profile text-center ">
+          <h3>Your profile</h3>
+          <img class="img-circle" src="https://randomuser.me/api/portraits/women/43.jpg">
+
+          <!-- change profile photo
+          <img [src]="url"> <br/>
+  <input type='file' (change)="onSelectFile($event)"> -->
+
+          <h4>Name : {{ userName }}</h4>
+          <h4>Email ID : {{ userEmail }} </h4>
+      </div>
+
+      <div *ngIf="tfavourite" name="favouriteContainer" class="favourite">
+          <p>fav</p>
+      </div>
+
+      <div *ngIf="trecommend" name="recommendContainer" class="recommend">
+          <p>recommend</p>
+      </div>
+        
+    </div>
+    <!-- end of row-fluid -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- designed-previous version. -->
+<!-- <div class="container-fluid mt-5">
     <div class="row">
       <div class="col col-lg-4 col-md-4 col-12">
-        <!--Sidebar content-->
+        
         <nav class="nav flex-column mt-15 pt-5">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -17,13 +87,13 @@
                   <a (click)="toggle('countrySpecial')"class="nav-link active decoration text-danger" ><h4>Country Special</h4></a>
                 </li>
               </ul>
-            <!-- <a class="nav-link active text-danger menuLinks"><h4>Album</h4></a> -->
+            
           </nav>
       </div>
 
  
       <div class="col col-lg-8 col-md-8 col-12">
-        <!--Body content-->
+        
         <div name="artistContainer" class="jumbotron jumbotron-fluid bg-danger text-light">
             <div class="container">
               <h3 class="display-4">Comments</h3>
@@ -46,7 +116,7 @@
           </div>
 
       </div>
-      <!-- end of row-fluid -->
+
     </div>
   </div>
 
@@ -59,4 +129,4 @@
 
 
 
-
+ -->

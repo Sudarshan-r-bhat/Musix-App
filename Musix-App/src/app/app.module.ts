@@ -15,6 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { PlaybarComponent } from './playbar/playbar.component';
+// MDB Angular Free
+import { IconsModule } from 'angular-bootstrap-md'
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ButtonsModule, InputsModule } from 'angular-bootstrap-md';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -34,9 +43,14 @@ import { PlaybarComponent } from './playbar/playbar.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
+    IconsModule,
+    MDBBootstrapModule.forRoot(),
+    ButtonsModule,
+    InputsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

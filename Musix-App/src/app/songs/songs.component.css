@@ -1,5 +1,10 @@
-.rounded {
-    border-radius: 4em;
+.circle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    /* image-rendering: auto; */
+    background-size: cover;
+    margin-left: 20%;
 }
 .menuLinks:hover,
 .menuLinks:active {
