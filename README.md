@@ -1,2 +1,15 @@
 # Musix-App
-This is a music streaming app. searches generated from the one and only napster.com !!
+
+## Basic Intro
+
+- This is a music sample streaming app. 
+- music can be searched generated based on author name, song name, song title.
+- The music search results will display relevant Audio samples from Napster.com API and relevant Video from youtube API.  
+
+## Features
+- Displays the top Artists and Songs in the Home page.
+- Add songs to favourites list for loggedIn Users.
+- Allows you to recommend songs globally to all users.
+- Search songs based on artist, song name, song titile.
+- Very Interactive UI.
+- User Registration and Basic Authentication.
