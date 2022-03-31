@@ -1,40 +1,81 @@
 
 <!-- User profile page -->
-<div class="container-fluid mt-5">
+<div [(ngModel)]="userDetails" class="container-fluid mt-5">
   <div class="row">
     <div class="col col-lg-4 col-md-4 col-12 text-center">
       <!--Sidebar content-->
       <img 
-      src="https://randomuser.me/api/portraits/women/43.jpg" 
+      [src]="url" 
       alt="Artist" class="img-circle">
-      <nav class="nav flex-column mt-20 pt-4">
-          <button (click)="toggle('profile')" class="btn btn-light btn-sm mt-3 p-1"><h4>Profile</h4></button>
+      <nav class="nav flex-column mt-15 pt-4">
+          <button (click)="toggle('profile')" class="btn btn-light btn-sm p-1"><h4>Profile</h4></button>
           <button (click)="toggle('favourite')" class="btn btn-light btn-sm mt-3 p-1"><h4>Favourite</h4></button>
           <button (click)="toggle('recommend')" class="btn btn-light btn-sm mt-3 p-1"><h4>Recommendation</h4></button>
+          <button (click)="toggle('comment')" class="btn btn-light btn-sm mt-3 mb-3 p-1"><h4>Comments</h4></button>
       </nav>
     </div>
 
 
-    <div class="col col-lg-8 col-md-8 col-12 bg-light">
+    <div class="col col-lg-8 col-md-8 col-12 bg-light text-dark">
       <!--Body content-->
-      <div *ngIf="tprofile" name="profileContainer" class="profile text-center ">
+      <div *ngIf="tprofile" name="profileContainer" class="profile text-center">
           <h3>Your profile</h3>
-          <img class="img-circle" src="https://randomuser.me/api/portraits/women/43.jpg">
+          <img class="img-circle img-sizing-1" [src]="userDetails.displayPicture">
 
           <!-- change profile photo
           <img [src]="url"> <br/>
-  <input type='file' (change)="onSelectFile($event)"> -->
-
-          <h4>Name : {{ userName }}</h4>
-          <h4>Email ID : {{ userEmail }} </h4>
+  <input type='file' (change)="onSelectFile($event)"> 
+-->
+          <!-- <h4>Name : {{ userName }}</h4> -->
+          <h4>Name: {{userDetails.name}}</h4>
+          <h4>User ID : {{ userDetails.email }} </h4>
+          <button (click)="updateProfile()" class="btn btn-success">
+            Update Profile
+          </button>
       </div>
 
-      <div *ngIf="tfavourite" name="favouriteContainer" class="favourite">
-          <p>fav</p>
+      <div *ngIf="tfavourite" name="favouriteContainer" class="favourite ml-2 mt-5">
+          <div class="container">
+            <div *ngFor="let fav of favArray" class="text-danger bg-light">
+              <button *ngIf="fav.favourite == 'yes'" class="btn btn-dark text-light mt-3" style="border: 0; outline:none;">
+                {{fav.songName | uppercase}}<br>
+                <audio controls>
+                  <source [(src)]="fav.songUrl" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </button>
+            </div>
+          </div>
       </div>
 
-      <div *ngIf="trecommend" name="recommendContainer" class="recommend">
-          <p>recommend</p>
+      <div *ngIf="trecommend" name="recommendContainer" class="recommend mt-5 bg-light">
+        <div class="container p-0">
+          <div *ngFor="let rec of recArray" class="text-danger bg-light">
+            <button *ngIf="rec.recommend == 'yes'"class="btn btn-dark text-light mt-3" style="border: 0; outline:none;">
+              {{rec.songName | uppercase}}<br>
+              <audio controls>
+                <source [(src)]="rec.songUrl" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </button>
+          </div>
+      </div>
+      </div>
+
+      <div *ngIf="tcomment" name="commentContainer" class="comment mt-5 bg-light">
+        <div class="container">
+          <div *ngFor="let com of commentArray" class="text-dark bg-light">
+            <button class="btn mt-3">
+              <button class="btn btn-dark text-light mr-auto">
+                {{com.songName}}:
+              </button>
+              <button class="btn btn-danger">
+                {{com.comment}}
+              </button>
+               
+            </button>
+          </div>
+      </div>
       </div>
         
     </div>

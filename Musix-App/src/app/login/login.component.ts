@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { Injector } from '@angular/core';
+import { User } from '../Models/User';
+
 
 @Component({
   selector: 'app-login',
@@ -12,10 +14,7 @@ import { Injector } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   // todo: property binding on ths object
-  private user: Object = {
-    email: 'admin',
-    password: 'admin'
-  }
+  user: User = new User();
   // todo: 2 way binding on this variable.
   private displayError: string = '';
 
@@ -25,19 +24,13 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    const authService = this._injector.get(AuthService);
-    authService.loginUser(this.user);
-    localStorage.setItem('token', 'secretkey');
-    this._router.navigate(['/user']);
+    if(this.user.email == '' || this.user.password == '' || this.user.email == 'admin') {
+      alert("Invalid details. ALl fields should be filled.");
+    } else {
+      const authService = this._injector.get(AuthService);
+      authService.loginUser(this.user);
+    }
 
-    /*this._authService
-      .loginUser(this.user)
-      .subscribe(res => {
-        localStorage.setItem('token', res.token);
-        this._router.navigate(['/user']);
-      }, err => {
-        this.displayError = err.message();
-      });*/  
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Injector } from '@angular/core';
+import { User } from '../Models/User';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +12,7 @@ import { Injector } from '@angular/core';
 export class RegisterComponent implements OnInit {
 
   private displayError: string = '';
-
-  private user: Object = {
-    username: '',
-    email: '',
-    password: '',
-    rePassword: '' 
-  }
+  user: User = new User();
 
   // injecting here
   constructor(private _router: Router, private _injector: Injector) { }
@@ -26,10 +21,14 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser() {
-    const authService = this._injector.get(AuthService); 
-    authService.registerUser(this.user);
-    // localStorage.setItem('token', 'secretkey');  
-    this._router.navigate(['/login']);
+    if(this.user.name == '' || this.user.email == '' || this.user.password == '') {
+      alert("All field should be filled and be valid");
+    } else {
+      const authService = this._injector.get(AuthService); 
+      authService.registerUser(this.user);
+      this._router.navigate(['/login']);
+    }
+
 
     /*
     this._authService

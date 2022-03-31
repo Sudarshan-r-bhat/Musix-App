@@ -7,23 +7,29 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchResultComponent } from './search-result/search-result.component';
-import { SongsComponent } from './songs/songs.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from "@angular/forms";
 import { CarouselModule } from 'ngx-owl-carousel-o';  // This is for the dashboard's carousel
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { PlaybarComponent } from './playbar/playbar.component';
 // MDB Angular Free
-import { IconsModule } from 'angular-bootstrap-md'
+import { IconsModule } from 'angular-bootstrap-md';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 import { ButtonsModule, InputsModule } from 'angular-bootstrap-md';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AlbumsComponent } from './albums/albums.component';
+import { ArtistsComponent } from './artists/artists.component'
+import { NapsterService } from './napster.service';
+import { YoutubeService } from './youtube.service'; 
+import { SpringInteractionService } from './spring-interaction.service';
+import { DashboardInnerComponent } from './dashboard-inner/dashboard-inner.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +38,13 @@ import { HttpClientModule } from '@angular/common/http'
     DashboardComponent,
     FooterComponent,
     SearchResultComponent,
-    SongsComponent,
     UserComponent,
     RegisterComponent,
     LoginComponent,
-    PlaybarComponent
+    AlbumsComponent,
+    ArtistsComponent,
+    DashboardInnerComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,17 @@ import { HttpClientModule } from '@angular/common/http'
     InputsModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, NapsterService, 
+    YoutubeService, SpringInteractionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+/*
+{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+  }
+
+ */ 

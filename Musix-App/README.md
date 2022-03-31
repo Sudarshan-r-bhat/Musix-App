@@ -2,6 +2,83 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
+## Software requirements
+Angular CLI: 10.0.3 <br> </br>
+Spring Tool  Suite 4-4.7.0 <br> </br>
+Visual Studio Code 1.49.1 <br> </br>
+MySQL Workbench 8.0.21 <br> </br>
+Docker 8.0. 21
+
+## Features
+
+## Registration page
+![](images/Registration.png?raw=true "registration")
+<br /><br />
+
+## Login page
+![](images/Registration.png?raw=true "login")
+<br /><br />
+
+## User_profile page
+![](images/Registration.png?raw=true "User_profile")
+<br /><br />
+
+## dashboard page-search by artist/songs
+![](images/Registration.png?raw=true "dashboard")
+<br /><br />
+
+## List of Albums by Artist
+![](images/Registration.png?raw=true "albums")
+<br /><br />
+
+## List of songs by Artist
+![](images/Registration.png?raw=true "songs")
+<br /><br />
+
+## Favourites section
+![](images/Registration.png?raw=true "Favourites")
+<br /><br />
+
+## Recommendation section
+![](images/Registration.png?raw=true "Recommendation")
+<br /><br />
+
+
+
+##  Future Roadmap
+1. User Registration,login ,bookmarks
+2. Search by Artist,track name
+3. Integration of Napster and YouTube
+4. More intuitive player
+ 
+
+
+## Project structure
+    1. Registration
+<br /><br />
+
+    2. Login
+<br /><br />
+
+    3. User_Profile
+<br /><br />
+
+    4. Dashboard
+<br /><br />
+
+    5. Search
+ <br /><br />
+
+    6. Artists
+<br /><br />
+
+    7. Songs
+ <br /><br />                         
+
+
+## API Reference
+[Link to Napster developer](https://developer.napster.com/developer "https://developer.napster.com/developer" )
+[Link to YouTube developer](https://developers.google.com/youtube  "https://developers.google.com/youtube")
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

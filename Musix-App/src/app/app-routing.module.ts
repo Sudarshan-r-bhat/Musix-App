@@ -6,9 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchResultComponent } from './search-result/search-result.component';
-import { SongsComponent } from './songs/songs.component';
 import { UserComponent } from './user/user.component';
-
+import { AlbumsComponent } from './albums/albums.component';
+import { ArtistsComponent } from './artists/artists.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,21 +28,26 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'searchResults',
+    path: 'searchResults/:searchString',
     component: SearchResultComponent
-  },
-  {
-    path: 'songs',
-    component: SongsComponent
   },
   {
     path: 'user',
     component: UserComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'updateProfile',
+    component: UpdateProfileComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'album/:albumId',
+    component: AlbumsComponent
+  },
+  {
+    path: 'artist/:id/:name',
+    component: ArtistsComponent
   }
 ];
 
