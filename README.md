@@ -3,8 +3,8 @@
 ## Basic Intro
 
 - This is a music sample streaming app. 
-- music can be searched generated based on author name, song name, song title.
-- The music search results will display relevant Audio samples from Napster.com API and relevant Video from youtube API.  
+- Music samples can be searched based on author name, song name, song title.
+- Search results will display relevant Audio samples, Artist information from Napster.com API and relevant Video from youtube API.  
 
 ## Features
 - Displays the top Artists and Songs in the Home page.
