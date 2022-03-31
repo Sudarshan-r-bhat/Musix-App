@@ -13,3 +13,6 @@
 - Search songs based on artist, song name, song titile.
 - Very Interactive UI.
 - User Registration and Basic Authentication.
+## Improvements needed
+- cache the search results as the youtube and Napster API has daily limit on number of API calls.
+- UI improvements
